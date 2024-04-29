@@ -1,29 +1,25 @@
-![Build](https://github.com/ingomohr/cucumber-example/actions/workflows/mvn-build-master.yml/badge.svg?branch=master)
+# Cucumber Example
 
-## What's This?
-This is a small example of how to use Cucumber in a Java project (Java 21, JUnit5)
+This is a small example of how to use Cucumber in a Java project (Java 17, JUnit5).
+note: This is being done in VSCode thanks to java extension
 
-It's based on:
-* [Cucumber-JVM instruction](https://cucumber.io/docs/installation/java/)
-* [Cucumber 10min tutorial](https://cucumber.io/docs/guides/10-minute-tutorial/?lang=java)
+## Setup
 
-... and a little bit of StackOverflow and Copilot
+1. Install Java 17 and Maven on your machine.
+2. Clone this repository.
+3. Navigate to the project directory in your terminal.
+4. Run `mvn clean install` to download the necessary dependencies.
 
-## What are my Take-Aways in General?
-* 🥳 BDD as executable specs is great
-* ❓ Refactoring step defs w/o IDE integration must be pita
-  * Integration in VSCode is kinda helpful in these matters, though
-* 👍 for `cucumber-archetype` Maven plugin (which I didn't use because I wasn't patient enough to read the docs beforehand ;))
-* 👍 for the very readable console output when building w/ mvn
-* ❓ No support for boolean parameters oob?
-* 👍 You can specify your own parameter types, though
+## Running the Tests
 
+1. Ensure you have Chrome installed as the tests run on a ChromeDriver.
+2. Update the login URL, username, and password in the `StepDefinitions.java` file.
+3. Run `mvn test` in your terminal to start the tests.
 
-## What are my IDE-Integration Take-Aways?
-* The [VSCode extension](https://github.com/cucumber/vscode) works well-ish and is (according to the Github repo) frequently updated
-* Didn't try the [Eclipse integration](https://github.com/cucumber/cucumber-eclipse)
-  * There is a 2.0.0 snapshot updatesite that [cannot be installed](https://github.com/cucumber/cucumber-eclipse/issues/507)
-  * There is a 1.0.0 build that's from 2021
-  * The last official release was in 2018, apparently
-  * Might try that one later as there are commits coming in
+## Environment Configuration
 
+This project uses the Selenium WebDriver for browser automation. The WebDriver interacts with the Chrome browser, so ensure you have it installed on your machine. The version of the ChromeDriver used should be compatible with the installed Chrome version.
+
+The project is set up to run on Java 17. If you're using a different version, update the `java.version` property in the `pom.xml` file.
+
+The tests are written using the Cucumber framework with JUnit5. The scenarios are defined in the `Login.feature` file, and the step definitions are in the `StepDefinitions.java` file.
