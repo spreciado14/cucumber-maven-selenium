@@ -1,3 +1,4 @@
+@cart
 Feature: Cart Management
 
 Scenario Outline: Add multiple items to the cart
